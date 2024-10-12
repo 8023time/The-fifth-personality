@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五人格</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        #backgroundVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        a.aki-btn {
+            position: absolute;
+            text-decoration: none;
+            line-height: 1;
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 16px;
+            color: #03e9f4;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            transform: translate(-50%, -50%); /* 使按钮在水平方向居中 */
+            left: 50%;
+            top: 30px; /* 调整到中间靠上的位置 */
+            display: none;
+        }
+        .aki-btn span{
+            color: #f5f5f5;
+            font-size: 24px;
+        }
+
+        a.aki-btn:hover {
+            background: #03e9f4;
+            color: black;
+            box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+        }
+
+        a.aki-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            animation: animate1 1s linear infinite;
+            background: linear-gradient(90deg, transparent, #03e9f4);
+        }
+
+        @keyframes animate1 {
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+
+        a.aki-btn::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #03e9f4);
+            animation: animate2 1s linear infinite;
+            animation-delay: 0.25s;
+        }
+
+        @keyframes animate2 {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+        a.aki-btn>span::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(270deg, transparent, #03e9f4);
+            animation: animate3 1s linear infinite;
+            animation-delay: 0.55s;
+        }
+
+        @keyframes animate3 {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+        a.aki-btn>span::after {
+            content: '';
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #03e9f4);
+            animation: animate4 1s linear infinite;
+            animation-delay: 0.75s;
+        }
+
+        @keyframes animate4 {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+<video id="backgroundVideo" autoplay loop muted>
+    <source src="../视频/第五人格首页.mp4" type="video/mp4">
+</video>
+
+<a onclick="endVideo()" class="aki-btn">
+    <span>第五人格</span>
+</a>
+
+<script>
+    const video = document.getElementById('backgroundVideo');
+    const durationBeforeRepeat = 1; // 循环重复的最后几秒
+    const repeatTime = 2; // 需要重复的视频长度（秒）
+    const button=document.querySelector('.aki-btn')
+
+    video.addEventListener('timeupdate', () => {
+        if (video.currentTime >= video.duration - durationBeforeRepeat) {
+            video.currentTime = video.duration - repeatTime; // 跳转到最后几秒
+        }
+    });
+    setTimeout(() => {
+        button.style.display="inline-block"
+    }, 7000);
+
+    function endVideo() {
+        window.location.href = './index.html'; // 替换为你要跳转的页面
+    }
+</script>
+
+</body>
+</html>
