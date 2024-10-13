@@ -35,9 +35,9 @@
             position: relative;
             overflow: hidden;
             transition: 0.5s;
-            transform: translate(-50%, -50%); /* 使按钮在水平方向居中 */
             left: 50%;
-            top: 30px; /* 调整到中间靠上的位置 */
+            top: 20px; 
+            transform: translate(-50%, 0); /* 使按钮在水平方向居中 */
             display: none;
         }
         .aki-btn span{
@@ -145,24 +145,35 @@
                 bottom: 100%;
             }
         }
+        .myfristpage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 3s, opacity 0.5s; /* 过渡效果 */
+        }
+        .changebig{
+            transform: scale(4);
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
-   
-<video id="backgroundVideo" autoplay loop muted>
-    <source src="../video/第五人格首页.mp4" type="video/mp4">
-</video>
+<div class="myfristpage">
+    <video id="backgroundVideo" autoplay loop muted>
+        <source src="../video/第五人格首页.mp4" type="video/mp4">
+    </video>
 
-<a onclick="endVideo()" class="aki-btn">
-    <span>第五人格</span>
-</a>
-
+    <a onclick="endVideo()" class="aki-btn">
+        <span>第五人格</span>
+    </a>
+</div>
 <script>
     const video = document.getElementById('backgroundVideo');
     const durationBeforeRepeat = 1; // 循环重复的最后几秒
     const repeatTime = 2; // 需要重复的视频长度（秒）
     const button=document.querySelector('.aki-btn')
-
+    const bigpage=document.querySelector('.myfristpage')
     video.addEventListener('timeupdate', () => {
         if (video.currentTime >= video.duration - durationBeforeRepeat) {
             video.currentTime = video.duration - repeatTime; // 跳转到最后几秒
@@ -173,9 +184,11 @@
     }, 7000);
 
     function endVideo() {
-        window.location.href = './index.html'; // 替换为你要跳转的页面
+        bigpage.classList.add('changebig')
+        setTimeout(()=>{
+            window.location.href = './index.html'; // 替换为你要跳转的页面
+        },1000)
     }
 </script>
-
 </body>
 </html>

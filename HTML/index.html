@@ -1,11 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>第五人格</title>
+    <style>
+        @font-face {
+            font-family: 'Handwriting';
+            src: url('../another/SanJiLingFeiTi/SanJiLingFeiTi-2.ttf');
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+        .book {
+            position: relative;
+            border-radius: 10px;
+            width: 440px;
+            height: 600px;
+            background-color: whitesmoke;
+            -webkit-box-shadow: 1px 1px 12px #000;
+            box-shadow: 1px 1px 12px #000;
+            -webkit-transform: preserve-3d;
+            -ms-transform: preserve-3d;
+            transform: preserve-3d;
+            -webkit-perspective: 2000px;
+            perspective: 2000px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            color: #000;
+            }
+
+            .cover {
+            top: 0;
+            position: absolute;
+            background-color: lightgray;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            -webkit-transform-origin: 0;
+            -ms-transform-origin: 0;
+            transform-origin: 0;
+            -webkit-box-shadow: 1px 1px 12px #000;
+            box-shadow: 1px 1px 12px #000;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            }
+
+            .book:hover .cover {
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            -webkit-transform: rotatey(-80deg);
+            -ms-transform: rotatey(-80deg);
+            transform: rotatey(-80deg);
+            }
+            .cover p {
+            font-size: 20px;
+            font-weight: bolder;
+            }
+            .cover p img{
+                width: 400px;
+                height: 400px;
+            }
+        .middle-side {
+            flex: 1;
+            display: flex;
+            position: relative;
+        }
+        .middle-left, .middle-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .middle-left {
+            left: 0;
+            padding: 0 100px;
+            /* background-color: #e0f7fa; */
+            animation: slideDown 2s forwards;
+        }
+        .middle-right {
+            right: 0;
+            /* background-color: #ffe0b2; */
+            animation: slideUp 2s forwards;
+        }
+        .botton-side {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* 垂直居中 */
+            background-color: #eeeeee;
+            padding: 10px;
+        }
+        .botton-left {
+            flex: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .botton-left span {
+            color: #d72323;
+            font-size: 24px;
+            font-family: 'Handwriting';
+            line-height: 1.5; /* 调整行间距 */
+        } 
+        .botton-left div {
+            display: flex;
+            flex-direction: column; /* 让span垂直排列 */
+            align-items: center;
+        }
+        .botton-left img {
+            margin-right: 10px;
+        }
+
+        .botton-right {
+            flex: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page-number {
+            font-family: 'Handwriting';
+            margin: 0 10px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            color: #0078d7;
+            transition: color 0.3s;
+        }
+        .page-number:hover {
+            color: #0056a3;
+        }
+        .page-number::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #0078d7;
+            transition: width 0.3s;
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50%);
+        }
+        .page-number:hover::after {
+            width: 100%;
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div>这是一个新的页面</div>
+    <div class="middle-side">
+        <div class="middle-left">
+            新学期，新同学
+
+            为了营造更加良好的学术创新氛围，帮助大一新生了解当代大学生广泛参与的重要赛事及我校特色第二课堂；广州大学团委学术科技中心博学讲坛特为计算机学院学子开展了新一期的、特别面向大一新生的学科训练营宣讲会，为广大新同学讲解大学生重要赛事、第二课堂、学术科技节等内容，以帮助新同学更快的融入大学生活。
+        
+        大二大三大四的同学也可参加❗️❗️
+        
+        ‼️时间：10月13日9:40-11:30
+        
+        ‼️福利：丰富的知识以及三创分0.2分
+        
+        ‼️地点：理科南110
+        ❗️❗️现在直接入场即可
+        </div>
+        <div class="middle-right">
+            <div class="book">
+                <p>第五人格</p>
+                <div class="cover">
+                    <p><img src="../picture/第五人格图标2.jpg" alt=""></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="botton-side">
+        <div class="botton-left">
+            <img src="../picture/第五人格图标1.png" alt="">
+            <div>
+                <span>一切恐惧</span>
+                <span>源于未知</span>
+            </div>
+        </div>
+        <div class="botton-right">
+            <div class="page-number" onclick="showContent(1)">1</div>
+            <div class="page-number" onclick="showContent(2)">2</div>
+            <div class="page-number" onclick="showContent(3)">3</div>
+            <div class="page-number" onclick="showContent(4)">4</div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(index) {
+            
+        }
+    </script>
 </body>
 </html>
