@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a.aki-btn111 {
+    text-decoration: none;
+    line-height: 1;
+    display: inline-block;
+    position: relative;
+    padding: 15px 20px;
+    font-size: 16px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    text-align: center;
+    color: #fff;
+    border-radius: 50px;
+    animation: sun 6s linear infinite;
+    animation-play-state: paused;
+}
+
+a.aki-btn111::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    background: inherit;
+    background-size: 400%;
+    border-radius: 50px;
+    filter: blur(8px);
+    z-index: -1;
+    animation: sun 6s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes sun {
+    100% {
+        background-position: -400% 0;
+    }
+}
+
+a.aki-btn111:hover::before,
+a.aki-btn111:hover {
+    animation-play-state: running;
+}
+    </style>
+</head>
+<body>
+    <a href="javascript:;" class="aki-btn111">Button Hover</a>
+</body>
+</html>

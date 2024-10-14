@@ -100,23 +100,28 @@
             /* color: #808080; */
         }
         .middle-left, .middle-right {
-            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 0;
-            position: absolute;
             width: 50%;
             height: 100%;
             transition: opacity 0.5s, transform 0.5s;
         }
         .middle-left {
-            left: 0;
-            padding: 0 100px;
+            position: relative;
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: column; /* 竖直排列 */
+            gap: 10px;
+            flex: 0.5;
+            padding:10px;
             /* background-color: #e0f7fa; */
             animation: slideDown 2s forwards;
         }
         .middle-right {
+            position: absolute;
+            flex: 0.5;
             right: 0;
             /* background-color: #ffe0b2; */
             animation: slideUp 2s forwards;
@@ -126,7 +131,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center; /* 垂直居中 */
-            background-color: #eeeeee;
+            background-color: rgb(54, 55, 55);
             padding: 10px;
         }
         .botton-left {
@@ -166,18 +171,18 @@
             padding: 10px;
             position: relative;
             cursor: pointer;
-            color: #0078d7;
+            color: #f38181;
             transition: color 0.3s;
         }
         .page-number:hover {
-            color: #0056a3;
+            color: #d72323;
         }
         .page-number::after {
             content: '';
             display: block;
             width: 0;
             height: 2px;
-            background: #0078d7;
+            background: #d72323;
             transition: width 0.3s;
             position: absolute;
             left: 50%;
@@ -215,7 +220,7 @@
         }
         .titlename{
             position: absolute;
-            right: 5%;
+            left: 5%;
             top: 46%;
             font-size: 40px;
         }
@@ -319,20 +324,72 @@
             .book .bookmessage{
                 margin: 0 20px;
             }
+            /* ffffe */
+            a.aki-btn111 {
+                display: block;
+            text-decoration: none;
+            line-height: 1;
+            display: inline-block;
+            position: relative;
+            padding: 15px 20px;
+            font-size: 16px;
+            background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+            background-size: 400%;
+            text-align: center;
+            color: #fff;
+            border-radius: 50px;
+            animation: sun 6s linear infinite;
+            animation-play-state: paused;
+        }
+        a.aki-btn111::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            right: -5px;
+            top: -5px;
+            bottom: -5px;
+            background: inherit;
+            background-size: 400%;
+            border-radius: 50px;
+            filter: blur(8px);
+            z-index: -1;
+            animation: sun 6s linear infinite;
+            animation-play-state: paused;
+        }
 
+        @keyframes sun {
+            100% {
+                background-position: -400% 0;
+            }
+        }
+
+        a.aki-btn111:hover::before,
+        a.aki-btn111:hover {
+            animation-play-state: running;
+        }
+        .container111 {
+            width: 100%;
+            height: 1000px;
+            /* Add your background pattern here */
+            background-image: linear-gradient(#ffffff 1.1rem, #ccc 1.2rem);
+            background-size: 100% 1.2rem;
+            }
+       
     </style>
 </head>
 <body>
-    <div class="middle-side">
+    <div class="middle-side container111">
         <div class="middle-left">
-            <div>
-                <div>20世纪欧洲,有一对年轻的艺术家夫妇在某偏远的山区以低廉的价格买下了一座占地面积巨大的庄园。因为历代主人有不祥传闻,这座庄园的名声很差。但是这对夫妻对迷信和流言置若罔闻。玩家扮演的主角便是这对夫妇的孩子。</div><br>
-                <div>24年前,主角迎来了12岁生日,但就在这一天双亲被匪徒残忍杀害了,主角精神受到了极大的冲击,精神恍惚,变得自闭。在他人的欺诈下,庄园被变卖而主角则被送进精神病院。庄园虽几经转手,但恶名依旧,不久便被荒废。</div><br>
-                <div>13年前,新兴犯罪推理小说家——奥尔菲斯开始在文学界崭露头角。同年,庄园被一位青年收购,在重金打造下庄园恢复了生机,但仍有很多地方被闲置（例如林场、猎场、教堂等区域）。就在大家认为庄园会在这位青年手下日益好转,但诡异的是事情发生了,人们察觉到这里的人员缺口像填不满似的,从未停止人员招募。社会上诸多的人口失踪案最后也都指向了这个地方。但警方的数次调查都一无所获。</div><br>
-                <div>10年前,一场大火烧了庄园大半区域。人们发现火灾中的遇难者死因和火灾没有任何关系,仅有少数几个幸存者昏迷在地,他们躺在地上的位置是经过特殊布置的,似乎在举办某种神秘的仪式,而小说家奥尔菲斯也在幸存者中。但奇怪的是,所有幸存者醒来后发现自己完全忘记了为什么来这个庄园,以及在这里发生过什么。幸存者等人的遭遇被定性为某种仪式的牺牲者,但其余人员的死因则始终无法得到合理解释。随后庄园被关闭,从此这个地方再无人敢问津甚至靠近这片区域,人们称之为“恶名昭著的庄园”。</div><br>
-                <div>主角——奥尔菲斯昏迷了整整一年,醒来时完全忘记了自己是谁。作为作家他已经写不出好的小说了,不久,这个曾名动一时的名字再也没有出现于公众视野中。</div><br>
-                <div>7年前,奥尔菲斯开了所私人侦探事务。1月前,某富商年幼的女儿离奇失踪,种种迹象都指向了“恶名昭著的庄园”,富商需要人帮他调查出真相。2天前,主角收到了富商的委托函,邀请主角协助帮忙调查。细看委托函上的收件人,是一个他自己的都已经遗忘的名字——(玩家输入姓名)。1天前,主角寄出了回执函,决定前去调查。次日,主角直接来到荒废已久的庄园主屋开始了调查……</div><br>
-            </div>
+            <div class="middle-left-top">
+                <a href="javascript:;" class="aki-btn111">游戏背景介绍</a>
+          </div>
+          <div class="middle-left-jieshao">
+            <div>20世纪欧洲,一对年轻的艺术家夫妇在偏远山区买下了一座庄园,尽管它有不祥的传闻,他们依然不在乎流言。</div>
+            <div>24年前,主角在12岁生日当天失去了双亲,经历了巨大的精神创伤,之后被送入精神病院,庄园也随之转手,最终被荒废。</div>
+            <div>13年前,作家奥尔菲斯在文坛崭露头角,而庄园被一位青年收购,重获生机。然而,人员失踪事件频频发生,社会上对庄园的调查却始终无果。</div>
+            <div>10年前,一场大火摧毁了庄园的大部分,火灾中遇难者的死因离奇,幸存者则在特殊布置的环境中昏迷,奥尔菲斯也在其中。他们醒来后失忆,庄园因此被称为“恶名昭著的庄园”。</div>
+            <div>主角奥尔菲斯昏迷了一年,醒来后完全忘却了自我,无法再写出好作品,最终开设了私人侦探事务所。一次富商的女儿失踪案将他引向庄园,委托函上赫然是他遗忘已久的名字——(玩家姓名)。他决定回到庄园,探寻真相……</div>
+          </div>
         </div>
         <div class="middle-right">
             <div class="titlename">
@@ -347,12 +404,12 @@
                         <ul>
                             <li>游戏公司:网易</li>
                             <li>发行时间:2018年</li>
-                            <li>细致的角色设计：角色设计独特且富有个性，每个角色都有独特的外观与背景故事，增强了沉浸感。</li>
-                            <li>非对称对抗：游戏的核心在于一名监管者与四名求生者之间的对抗。监管者需要追捕求生者，而求生者则需合作完成任务并逃脱。</li>
-                            <li>多人在线竞技：游戏支持多人在线对抗，鼓励玩家间的互动与合作。</li>
-                            <li>音效与音乐：游戏的音效和背景音乐相辅相成，进一步增强了紧张和神秘的氛围，使玩家沉浸在游戏中。</li>
-                            <li>哥特式视觉：游戏采用独特的哥特式艺术风格，营造出阴暗而神秘的氛围，增强了游戏的恐怖感。</li>
-                            <li>角色技能：游戏中有多个角色，每个角色都具备独特的技能，这些技能在游戏中提供了多样的策略选择。</li>
+                            <li>细致的角色设计：角色设计独特且富有个性,每个角色都有独特的外观与背景故事,增强了沉浸感。</li>
+                            <li>非对称对抗：游戏的核心在于一名监管者与四名求生者之间的对抗。监管者需要追捕求生者,而求生者则需合作完成任务并逃脱。</li>
+                            <li>多人在线竞技：游戏支持多人在线对抗,鼓励玩家间的互动与合作。</li>
+                            <li>音效与音乐：游戏的音效和背景音乐相辅相成,进一步增强了紧张和神秘的氛围,使玩家沉浸在游戏中。</li>
+                            <li>哥特式视觉：游戏采用独特的哥特式艺术风格,营造出阴暗而神秘的氛围,增强了游戏的恐怖感。</li>
+                            <li>角色技能：游戏中有多个角色,每个角色都具备独特的技能,这些技能在游戏中提供了多样的策略选择。</li>
                         </ul>
                     </div>
                 </p>
@@ -378,6 +435,11 @@
             <div class="page-number" onclick="showContent(3)">4</div>
             <div class="page-number" onclick="showContent(4)">5</div>
             <div class="page-number" onclick="showContent(5)">6</div>
+            <div class="page-number" onclick="showContent(6)">7</div>
+            <div class="page-number" onclick="showContent(7)">8</div>
+            <div class="page-number" onclick="showContent(8)">9</div>
+            <div class="page-number" onclick="showContent(9)">10</div>
+            <div class="page-number" onclick="showContent(10)">11</div>
             <div class="page-number" >......</div>
         </div>
     </div>
@@ -392,56 +454,169 @@
             {
                 mydiv:`
                 <div>
-                    <div>20世纪欧洲,有一对年轻的艺术家夫妇在某偏远的山区以低廉的价格买下了一座占地面积巨大的庄园。因为历代主人有不祥传闻,这座庄园的名声很差。但是这对夫妻对迷信和流言置若罔闻。玩家扮演的主角便是这对夫妇的孩子。</div><br>
-                    <div>24年前,主角迎来了12岁生日,但就在这一天双亲被匪徒残忍杀害了,主角精神受到了极大的冲击,精神恍惚,变得自闭。在他人的欺诈下,庄园被变卖而主角则被送进精神病院。庄园虽几经转手,但恶名依旧,不久便被荒废。</div><br>
-                    <div>13年前,新兴犯罪推理小说家——奥尔菲斯开始在文学界崭露头角。同年,庄园被一位青年收购,在重金打造下庄园恢复了生机,但仍有很多地方被闲置（例如林场、猎场、教堂等区域）。就在大家认为庄园会在这位青年手下日益好转,但诡异的是事情发生了,人们察觉到这里的人员缺口像填不满似的,从未停止人员招募。社会上诸多的人口失踪案最后也都指向了这个地方。但警方的数次调查都一无所获。</div><br>
-                    <div>10年前,一场大火烧了庄园大半区域。人们发现火灾中的遇难者死因和火灾没有任何关系,仅有少数几个幸存者昏迷在地,他们躺在地上的位置是经过特殊布置的,似乎在举办某种神秘的仪式,而小说家奥尔菲斯也在幸存者中。但奇怪的是,所有幸存者醒来后发现自己完全忘记了为什么来这个庄园,以及在这里发生过什么。幸存者等人的遭遇被定性为某种仪式的牺牲者,但其余人员的死因则始终无法得到合理解释。随后庄园被关闭,从此这个地方再无人敢问津甚至靠近这片区域,人们称之为“恶名昭著的庄园”。</div><br>
-                    <div>主角——奥尔菲斯昏迷了整整一年,醒来时完全忘记了自己是谁。作为作家他已经写不出好的小说了,不久,这个曾名动一时的名字再也没有出现于公众视野中。</div><br>
-                    <div>7年前,奥尔菲斯开了所私人侦探事务。1月前,某富商年幼的女儿离奇失踪,种种迹象都指向了“恶名昭著的庄园”,富商需要人帮他调查出真相。2天前,主角收到了富商的委托函,邀请主角协助帮忙调查。细看委托函上的收件人,是一个他自己的都已经遗忘的名字——(玩家输入姓名)。1天前,主角寄出了回执函,决定前去调查。次日,主角直接来到荒废已久的庄园主屋开始了调查……</div><br>
-                </div>`,
+                        <a href="javascript:;" class="aki-btn111">游戏背景介绍</a>
+                </div>
+                <div>
+                    <div>20世纪欧洲,一对年轻的艺术家夫妇在偏远山区买下了一座庄园,尽管它有不祥的传闻,他们依然不在乎流言。</div>
+                    <div>24年前,主角在12岁生日当天失去了双亲,经历了巨大的精神创伤,之后被送入精神病院,庄园也随之转手,最终被荒废。</div>
+                    <div>13年前,作家奥尔菲斯在文坛崭露头角,而庄园被一位青年收购,重获生机。然而,人员失踪事件频频发生,社会上对庄园的调查却始终无果。</div>
+                    <div>10年前,一场大火摧毁了庄园的大部分,火灾中遇难者的死因离奇,幸存者则在特殊布置的环境中昏迷,奥尔菲斯也在其中。他们醒来后失忆,庄园因此被称为“恶名昭著的庄园”。</div>
+                    <div>主角奥尔菲斯昏迷了一年,醒来后完全忘却了自我,无法再写出好作品,最终开设了私人侦探事务所。一次富商的女儿失踪案将他引向庄园,委托函上赫然是他遗忘已久的名字——(玩家姓名)。他决定回到庄园,探寻真相……</div>
+                </div>
+                `,
                 myimage:`<p><img src="../picture/第五人格图标2.jpg" alt=""></p>`,
                 mybookmessage:`
                         <ul>
                             <li>游戏公司:网易</li>
                             <li>发行时间:2018年</li>
-                            <li>细致的角色设计：角色设计独特且富有个性，每个角色都有独特的外观与背景故事，增强了沉浸感。</li>
-                            <li>非对称对抗：游戏的核心在于一名监管者与四名求生者之间的对抗。监管者需要追捕求生者，而求生者则需合作完成任务并逃脱。</li>
-                            <li>多人在线竞技：游戏支持多人在线对抗，鼓励玩家间的互动与合作。</li>
-                            <li>音效与音乐：游戏的音效和背景音乐相辅相成，进一步增强了紧张和神秘的氛围，使玩家沉浸在游戏中。</li>
-                            <li>哥特式视觉：游戏采用独特的哥特式艺术风格，营造出阴暗而神秘的氛围，增强了游戏的恐怖感。</li>
-                            <li>角色技能：游戏中有多个角色，每个角色都具备独特的技能，这些技能在游戏中提供了多样的策略选择。</li>
+                            <li>细致的角色设计：角色设计独特且富有个性,每个角色都有独特的外观与背景故事,增强了沉浸感。</li>
+                            <li>非对称对抗：游戏的核心在于一名监管者与四名求生者之间的对抗。监管者需要追捕求生者,而求生者则需合作完成任务并逃脱。</li>
+                            <li>多人在线竞技：游戏支持多人在线对抗,鼓励玩家间的互动与合作。</li>
+                            <li>音效与音乐：游戏的音效和背景音乐相辅相成,进一步增强了紧张和神秘的氛围,使玩家沉浸在游戏中。</li>
+                            <li>哥特式视觉：游戏采用独特的哥特式艺术风格,营造出阴暗而神秘的氛围,增强了游戏的恐怖感。</li>
+                            <li>角色技能：游戏中有多个角色,每个角色都具备独特的技能,这些技能在游戏中提供了多样的策略选择。</li>
                         </ul>`,
                 titlename:'游戏背景'
             },
             {
-                mydiv: 2,
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
                 myimage:`<p><img src="../picture/小女孩.webp" alt=""></p>`,
                 mybookmessage:2,
-                titlename:'小女孩'
+                titlename:'小说家/噩梦'
             },
             {
-                mydiv: 3,
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
                 myimage:`<p><img src="../picture/前锋.jpg" alt=""></p>`,
                 mybookmessage:3,
-                titlename:'前锋'
+                titlename:'记者/小女孩'
             },
             {
-                mydiv: 4,
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
                 myimage:`<p><img src="../picture/宿伞之魂.jpg" alt=""></p>`,
                 mybookmessage:4,
-                titlename:'宿伞之魂'
+                titlename:'祭祀'
             },
             {
-                mydiv: 5,
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
                 myimage:`<p><img src="../picture/川上富江.webp" alt=""></p>`,
                 mybookmessage:5,
-                titlename:'梦之女巫'
+                titlename:'先知'
             },
             {
-                mydiv: 6,
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+                        
+                    </div>
+                `,
                 myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
                 mybookmessage:6,
                 titlename:'古董商'
+            },
+            {
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
+                myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
+                mybookmessage:7,
+                titlename:'红夫人'
+            },
+            {
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
+                myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
+                mybookmessage:8,
+                titlename:'心理学家'
+            },
+            {
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
+                myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
+                mybookmessage:9,
+                titlename:'病患'
+            },
+            {
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
+                myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
+                mybookmessage:10,
+                titlename:'前锋'
+            },
+            {
+                mydiv: `
+                    <div>
+                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
+                        <a href="javascript:;" class="aki-btn111">视频播放</a>
+                    </div>
+                    <div>
+
+                    </div>
+                `,
+                myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
+                mybookmessage:11,
+                titlename:'宿伞之魂'
             }
         ]
         function showContent(index) {
