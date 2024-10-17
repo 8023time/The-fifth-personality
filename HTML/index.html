@@ -46,7 +46,6 @@
             justify-content: center;
             color: #000;
             }
-
             .cover {
             top: 0;
             position: absolute;
@@ -287,7 +286,6 @@
                 80px 80px, 80px 80px;
             padding: 5px 10px;
             border: 1px solid rgb(206, 204, 204);
-
             height: 70px;
             width: 110px;
             border-radius: 5px;
@@ -319,7 +317,7 @@
                 margin: 0 20px;
             }
             /* ffffe */
-            a.aki-btn111 {
+            .aki-btn111 {
                 display: block;
             text-decoration: none;
             line-height: 1;
@@ -335,7 +333,7 @@
             animation: sun 6s linear infinite;
             animation-play-state: paused;
         }
-        a.aki-btn111::before {
+        .aki-btn111::before {
             content: "";
             position: absolute;
             left: -5px;
@@ -355,11 +353,10 @@
                 background-position: -400% 0;
             }
         }
-
-        a.aki-btn111:hover::before,
-        a.aki-btn111:hover {
+        .aki-btn111:hover::before,
+        .aki-btn111:hover {
             animation-play-state: running;
-        }
+        }   
         .container111 {
             width: 100%;
             height: 1000px;
@@ -408,7 +405,6 @@
             animation: shake 3s ease-in-out infinite;
             transform-origin: 60px 180px;
             }
-
             .loader:before {
             content: "";
             position: absolute;
@@ -420,7 +416,6 @@
             border-radius: 0 0 4px 4px;
             box-shadow: 102px 0 #aaa;
             }
-
             .loader:after {
             content: "";
             position: absolute;
@@ -474,21 +469,51 @@
                 transform: rotate(0)
             }
             }
+            .middle-left-top{
+                position: absolute;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .middle-left-jieshao{
+                display: block;
+                position: absolute;
+                top: 200px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow-y: auto;
+            }
+            .middle-left-top a:nth-child(1){
+                margin-right: 50px;
+            }
+            .videoplay{
+                display: none;
+                position: absolute;
+                margin: 0 auto;
+                top: 200px;
+                width: 600px;
+                height: 350px;
+                /* background-color: #03a9f4; */
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
     </style>
 </head>
 <body>
     <div class="middle-side container111" id="snow-container">
         <div class="middle-left">
             <div class="middle-left-top">
-                <a href="javascript:;" class="aki-btn111">游戏背景介绍</a>
-          </div>
-          <div class="middle-left-jieshao">
+                <button class="aki-btn111">游戏背景</button>
+            </div>
+        <div class="middle-left-jieshao">
             <div>20世纪欧洲,一对年轻的艺术家夫妇在偏远山区买下了一座庄园,尽管它有不祥的传闻,他们依然不在乎流言。</div>
             <div>24年前,主角在12岁生日当天失去了双亲,经历了巨大的精神创伤,之后被送入精神病院,庄园也随之转手,最终被荒废。</div>
             <div>13年前,作家奥尔菲斯在文坛崭露头角,而庄园被一位青年收购,重获生机。然而,人员失踪事件频频发生,社会上对庄园的调查却始终无果。</div>
             <div>10年前,一场大火摧毁了庄园的大部分,火灾中遇难者的死因离奇,幸存者则在特殊布置的环境中昏迷,奥尔菲斯也在其中。他们醒来后失忆,庄园因此被称为“恶名昭著的庄园”。</div>
             <div>主角奥尔菲斯昏迷了一年,醒来后完全忘却了自我,无法再写出好作品,最终开设了私人侦探事务所。一次富商的女儿失踪案将他引向庄园,委托函上赫然是他遗忘已久的名字——(玩家姓名)。他决定回到庄园,探寻真相……</div>
-          </div>
+        </div>
         </div>
         <div class="middle-right">
             <div class="titlename">
@@ -518,13 +543,6 @@
             </div>
         </div>
     </div>
-
-
-
-    
-
-
-
     <div class="botton-side">
         <div class="botton-left">
             <img src="../picture/第五人格图标1.png" alt="">
@@ -548,7 +566,6 @@
             <div class="page-number" onclick="showContent(11)">......</div>
         </div>
     </div>
-
     <script>
         const middleleft=document.querySelector('.middle-left')
         const middleright=document.querySelector('.middle-right')
@@ -557,13 +574,15 @@
         const cover=document.querySelector('.cover')
         const pagenumber=document.querySelector('.page-number')
         const middleside=document.querySelector('.middle-side')
+        const button1=document.querySelector('.middle-left-jieshao')
+        const button2=document.querySelector('.videoplay')
         const usermessage=[
             {
                 mydiv:`
-                <div>
-                        <a href="javascript:;" class="aki-btn111">游戏背景介绍</a>
-                </div>
-                <div>
+                    <div class="middle-left-top">
+                        <button class="aki-btn111">游戏背景</button>
+                    </div>
+                <div class="middle-left-jieshao">
                     <div>20世纪欧洲,一对年轻的艺术家夫妇在偏远山区买下了一座庄园,尽管它有不祥的传闻,他们依然不在乎流言。</div>
                     <div>24年前,主角在12岁生日当天失去了双亲,经历了巨大的精神创伤,之后被送入精神病院,庄园也随之转手,最终被荒废。</div>
                     <div>13年前,作家奥尔菲斯在文坛崭露头角,而庄园被一位青年收购,重获生机。然而,人员失踪事件频频发生,社会上对庄园的调查却始终无果。</div>
@@ -587,13 +606,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=591409792&bvid=BV1Wq4y1r7cN&cid=435490091&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/小女孩.webp" alt=""></p>`,
                 mybookmessage:2,
@@ -601,13 +623,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=549066605&bvid=BV14q4y137ZK&cid=439861038&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/小女孩.webp" alt=""></p>`,
                 mybookmessage:3,
@@ -615,13 +640,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1305862871&bvid=BV1iM4m1m7uz&cid=1591681379&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/宿伞之魂.jpg" alt=""></p>`,
                 mybookmessage:4,
@@ -629,13 +657,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1500506687&bvid=BV1iU421o7vb&cid=1440248221&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/川上富江.webp" alt=""></p>`,
                 mybookmessage:5,
@@ -643,13 +674,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-                        
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=856173822&bvid=BV1HV4y177gH&cid=779808166&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
                 mybookmessage:6,
@@ -657,13 +691,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=65036633&bvid=BV1M4411r7Kz&cid=112884620&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/小女孩.webp" alt=""></p>`,
                 mybookmessage:7,
@@ -671,13 +708,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+               <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=749361862&bvid=BV1oC4y1c7NW&cid=1355299189&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
                 mybookmessage:8,
@@ -685,13 +725,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=749361862&bvid=BV1oC4y1c7NW&cid=1355299189&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
                 mybookmessage:9,
@@ -699,13 +742,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1005115014&bvid=BV1Nx4y1n7LX&cid=1562975398&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/前锋.jpg" alt=""></p>`,
                 mybookmessage:10,
@@ -713,13 +759,16 @@
             },
             {
                 mydiv: `
-                    <div>
-                        <a href="javascript:;" class="aki-btn111">角色介绍</a>
-                        <a href="javascript:;" class="aki-btn111">视频播放</a>
-                    </div>
-                    <div>
-
-                    </div>
+                <div class="middle-left-top">
+            <button class="aki-btn111" onclick="changepages1()">视频播放</button>
+            <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
+        </div>
+      <div class="middle-left-jieshao">
+        
+      </div>
+      <div class="videoplay">
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=644157905&bvid=BV1qY4y1w72s&cid=794996640&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
+      </div>
                 `,
                 myimage:`<p><img src="../picture/宿伞之魂.jpg" alt="">`,
                 mybookmessage:11,
@@ -736,6 +785,27 @@
                titlename:'谢谢'
             }
         ]
+        function changepages1(){
+            document.querySelector('.middle-left-jieshao').style.display='none'
+            document.querySelector('.videoplay').style.display='block'
+            console.log('啊飒飒');
+            
+        }
+        function changepages2(){
+            document.querySelector('.videoplay').style.display='none'
+            document.querySelector('.middle-left-jieshao').style.display='block'
+            console.log('啊飒飒');
+        }
+        // const appbutton1=document.querySelector('.aki-btn111.appbutton1')
+        // appbutton1.addEventListener('click',()=>{
+        //     button2.style.display='none'
+        //     button1.style.display='block'
+        // })
+        // const appbutton2=document.querySelector('.aki-btn111.appbutton2')
+        // appbutton2.addEventListener('click',()=>{
+        //     button2.style.display='block'
+        //     button1.style.display='none' 
+        // })
         function showContent(index) {
             // 更新内容
             const middleleft = document.querySelector('.middle-left');
@@ -743,30 +813,20 @@
             const tooltip=document.querySelector('.tooltip')
             const bookname=document.querySelector('.bookmessage')
             const cover=document.querySelector('.cover')
-
             // 更新内容
             middleleft.innerHTML = usermessage[index].mydiv;
             tooltip.innerHTML = usermessage[index].titlename;
             bookname.innerHTML = usermessage[index].mybookmessage;
             cover.innerHTML = usermessage[index].myimage;
-
-
             // 将元素从 DOM 中移除然后再添加
             const leftClone = middleleft.cloneNode(true);
             const rightClone = middleright.cloneNode(true);
-            
             middleleft.parentNode.replaceChild(leftClone, middleleft);
-            middleright.parentNode.replaceChild(rightClone, middleright);
-            
-
+            middleright.parentNode.replaceChild(rightClone, middleright)
             // 重新添加动画类
             leftClone.classList.add('slideDown');
             rightClone.classList.add('slideUp');
-}
-
-
-
-
+        }
         function createSnowflake() {
                 const snowflake = document.createElement('div');
                 snowflake.className = 'snowflake';
