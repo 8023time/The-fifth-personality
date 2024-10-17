@@ -97,7 +97,6 @@
             font-family: 'kaishu';
             font-size: 24px;
             text-indent: 2em;
-            /* color: #808080; */
         }
         .middle-left, .middle-right {
             display: flex;
@@ -112,7 +111,7 @@
             position: relative;
             flex-wrap: wrap;
             display: flex;
-            flex-direction: column; /* 竖直排列 */
+            flex-direction: column; 
             gap: 10px;
             flex: 0.5;
             padding:10px;
@@ -130,7 +129,7 @@
             height: 70px;
             display: flex;
             justify-content: space-between;
-            align-items: center; /* 垂直居中 */
+            align-items: center;
             background-color: rgb(54, 55, 55);
             padding: 10px;
         }
@@ -148,11 +147,11 @@
             color: #d72323;
             font-size: 24px;
             font-family: 'Handwriting';
-            line-height: 1.5; /* 调整行间距 */
+            line-height: 1.5;
         } 
         .botton-left div {
             display: flex;
-            flex-direction: column; /* 让span垂直排列 */
+            flex-direction: column;
             align-items: center;
         }
         .botton-left img {
@@ -246,7 +245,6 @@
             position: relative;
             transition: transform 0.3s ease;
             }
-
             .tooltip-container::before {
             position: absolute;
             content: "";
@@ -268,13 +266,11 @@
             transform: perspective(1000px) rotateX(-150deg) translateY(-110%);
             transition: transform 0.3s ease;
             }
-
             .tooltip-container .text {
             color: rgb(32, 30, 30);
             font-weight: bold;
             font-size: 40px;
             }
-
             .tooltip {
             position: absolute;
             top: -20px;
@@ -309,13 +305,11 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             }
-
             .tooltip-container:hover::before {
             transform: rotateY(0);
             background-image: none;
             background-color: white;
             }
-
             .tooltip-container:hover .tooltip {
             top: -90px;
             opacity: 1;
@@ -356,7 +350,6 @@
             animation: sun 6s linear infinite;
             animation-play-state: paused;
         }
-
         @keyframes sun {
             100% {
                 background-position: -400% 0;
@@ -370,15 +363,121 @@
         .container111 {
             width: 100%;
             height: 1000px;
-            /* Add your background pattern here */
             background-image: linear-gradient(#ffffff 1.1rem, #ccc 1.2rem);
             background-size: 100% 1.2rem;
             }
-       
+            .snow-container {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: 0; 
+        }
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background: rgb(239, 2, 2);
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none; 
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+            .loader {
+            width: 360px;
+            height: 450px;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(#ddd 50%, #bbb 51%),
+                linear-gradient(#ddd, #ddd), linear-gradient(#ddd, #ddd),
+                radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
+                radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
+                radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%);
+            background-position: 0 20px, 45px 0, 8px 6px, 55px 3px, 75px 3px, 95px 3px;
+            background-size: 100% 4px, 1px 23px, 30px 8px, 15px 15px, 15px 15px, 15px 15px;
+            position: relative;
+            border-radius: 6%;
+            animation: shake 3s ease-in-out infinite;
+            transform-origin: 60px 180px;
+            }
+
+            .loader:before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 100%;
+            width: 7px;
+            height: 5px;
+            background: #aaa;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 102px 0 #aaa;
+            }
+
+            .loader:after {
+            content: "";
+            position: absolute;
+            width: 285px;
+            height: 285px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            bottom: 20px;
+            background-color: #bbdefb;
+            background-image: linear-gradient( to right, #0004 0%, #0004 49%, #0000 50%, #0000 100% ),
+                linear-gradient(135deg, #64b5f6 50%, #607d8b 51%);
+            background-size: 30px 100%, 90px 80px;
+            border-radius: 50%;
+            background-repeat: repeat, no-repeat;
+            background-position: 0 0;
+            box-sizing: border-box;
+            border: 10px solid #DDD;
+            box-shadow: 0 0 0 4px #999 inset, 0 0 6px 6px #0004 inset;
+            animation: spin 3s ease-in-out infinite;
+            }
+
+            @keyframes spin {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            50% {
+                transform: rotate(360deg)
+            }
+
+            75% {
+                transform: rotate(750deg)
+            }
+
+            100% {
+                transform: rotate(1800deg)
+            }
+            }
+
+            @keyframes shake {
+            65%, 80%, 88%, 96% {
+                transform: rotate(0.5deg)
+            }
+
+            50%, 75%, 84%, 92% {
+                transform: rotate(-0.5deg)
+            }
+
+            0%, 50%, 100% {
+                transform: rotate(0)
+            }
+            }
     </style>
 </head>
 <body>
-    <div class="middle-side container111">
+    <div class="middle-side container111" id="snow-container">
         <div class="middle-left">
             <div class="middle-left-top">
                 <a href="javascript:;" class="aki-btn111">游戏背景介绍</a>
@@ -420,6 +519,12 @@
         </div>
     </div>
 
+
+
+    
+
+
+
     <div class="botton-side">
         <div class="botton-left">
             <img src="../picture/第五人格图标1.png" alt="">
@@ -440,7 +545,7 @@
             <div class="page-number" onclick="showContent(8)">9</div>
             <div class="page-number" onclick="showContent(9)">10</div>
             <div class="page-number" onclick="showContent(10)">11</div>
-            <div class="page-number" >......</div>
+            <div class="page-number" onclick="showContent(11)">......</div>
         </div>
     </div>
 
@@ -450,6 +555,8 @@
         const tooltip=document.querySelector('.tooltip')
         const bookname=document.querySelector('.bookmessage')
         const cover=document.querySelector('.cover')
+        const pagenumber=document.querySelector('.page-number')
+        const middleside=document.querySelector('.middle-side')
         const usermessage=[
             {
                 mydiv:`
@@ -502,7 +609,7 @@
 
                     </div>
                 `,
-                myimage:`<p><img src="../picture/前锋.jpg" alt=""></p>`,
+                myimage:`<p><img src="../picture/小女孩.webp" alt=""></p>`,
                 mybookmessage:3,
                 titlename:'记者/小女孩'
             },
@@ -558,7 +665,7 @@
 
                     </div>
                 `,
-                myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
+                myimage:`<p><img src="../picture/小女孩.webp" alt=""></p>`,
                 mybookmessage:7,
                 titlename:'红夫人'
             },
@@ -600,7 +707,7 @@
 
                     </div>
                 `,
-                myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
+                myimage:`<p><img src="../picture/前锋.jpg" alt=""></p>`,
                 mybookmessage:10,
                 titlename:'前锋'
             },
@@ -614,28 +721,64 @@
 
                     </div>
                 `,
-                myimage:`<p><img src="../picture/古董商.jpg" alt=""></p>`,
+                myimage:`<p><img src="../picture/宿伞之魂.jpg" alt="">`,
                 mybookmessage:11,
                 titlename:'宿伞之魂'
+            },
+            {
+                mydiv: `
+                    <div>
+                        <div class="loader"></div>
+                    </div>
+                `,
+                myimage:`<p>最后的最后</p>`,
+                mybookmessage:'谢谢观看!!!',
+               titlename:'谢谢'
             }
         ]
         function showContent(index) {
-            middleleft.classList.remove('slideDown');
-            middleright.classList.remove('slideUp');
+            // 更新内容
+            const middleleft = document.querySelector('.middle-left');
+            const middleright = document.querySelector('.middle-right');
+            const tooltip=document.querySelector('.tooltip')
+            const bookname=document.querySelector('.bookmessage')
+            const cover=document.querySelector('.cover')
 
-            middleleft.innerHTML=usermessage[index].mydiv
-            tooltip.innerHTML=usermessage[index].titlename
-            bookname.innerHTML=usermessage[index].mybookmessage
-            cover.innerHTML=usermessage[index].myimage
+            // 更新内容
+            middleleft.innerHTML = usermessage[index].mydiv;
+            tooltip.innerHTML = usermessage[index].titlename;
+            bookname.innerHTML = usermessage[index].mybookmessage;
+            cover.innerHTML = usermessage[index].myimage;
 
-            middleleft.classList.add('slideDown');
-            middleright.classList.add('slideUp')
 
-            middleleft.addEventListener('animationend', () => {
-             middleleft.classList.remove('slideDown');
-             middleright.classList.remove('slideUp');
-            }, { once: true });
-        }
+            // 将元素从 DOM 中移除然后再添加
+            const leftClone = middleleft.cloneNode(true);
+            const rightClone = middleright.cloneNode(true);
+            
+            middleleft.parentNode.replaceChild(leftClone, middleleft);
+            middleright.parentNode.replaceChild(rightClone, middleright);
+            
+
+            // 重新添加动画类
+            leftClone.classList.add('slideDown');
+            rightClone.classList.add('slideUp');
+}
+
+
+
+
+        function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.left = Math.random() * window.innerWidth + 'px';
+                snowflake.style.animationDuration = (Math.random() * 5 + 4) + 's'; 
+                snowflake.style.opacity = Math.random(); 
+                document.getElementById('snow-container').appendChild(snowflake);
+                snowflake.addEventListener('animationend', () => {
+                    snowflake.remove();
+                });
+            }
+            setInterval(createSnowflake, 100); 
     </script>
 </body>
 </html>
