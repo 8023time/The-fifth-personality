@@ -315,6 +315,25 @@
             }
             .book .bookmessage{
                 margin: 0 20px;
+                /* display: flex; */
+            }
+            .book .bookmessage ul li {
+                font-size: 20px;
+                font-family:'Handwriting' ;
+            }
+            .book .bookmessage div{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .book .bookmessage div img{
+                width: 40%;
+                justify-items: center;
+                /* justify-content: center; */
+                /* text-align: center; */
+                /* height: 40%; */
+                /* display: flex; */
+                
             }
             /* ffffe */
             .aki-btn111 {
@@ -499,6 +518,36 @@
                 right: 0;
                 bottom: 0;
             }
+            .gudongshan, .qianfeng{
+                transform: scale(2);
+            }
+            .binghuan {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .binghuan img:nth-child(1){
+                width: 50% ;
+            }
+            .binghuan img:nth-child(2)
+            {
+                width:60% !important;
+            }
+            .binghuan img:nth-child(3)
+            {
+                width: 100% !important;
+            }
+            .xianlixuejia img:nth-child(2){
+                width: 60% !important;
+            }
+            .xianlixuejia img:nth-child(3){
+                width: 52% !important;
+            }
+            .xianlixuejia img:nth-child(4){
+                width: 52% !important;
+            }
+            .myheadpicture{
+                border-radius: 50%;
+            }
     </style>
 </head>
 <body>
@@ -508,11 +557,12 @@
                 <button class="aki-btn111">游戏背景</button>
             </div>
         <div class="middle-left-jieshao">
-            <div>20世纪欧洲,一对年轻的艺术家夫妇在偏远山区买下了一座庄园,尽管它有不祥的传闻,他们依然不在乎流言。</div>
-            <div>24年前,主角在12岁生日当天失去了双亲,经历了巨大的精神创伤,之后被送入精神病院,庄园也随之转手,最终被荒废。</div>
-            <div>13年前,作家奥尔菲斯在文坛崭露头角,而庄园被一位青年收购,重获生机。然而,人员失踪事件频频发生,社会上对庄园的调查却始终无果。</div>
-            <div>10年前,一场大火摧毁了庄园的大部分,火灾中遇难者的死因离奇,幸存者则在特殊布置的环境中昏迷,奥尔菲斯也在其中。他们醒来后失忆,庄园因此被称为“恶名昭著的庄园”。</div>
-            <div>主角奥尔菲斯昏迷了一年,醒来后完全忘却了自我,无法再写出好作品,最终开设了私人侦探事务所。一次富商的女儿失踪案将他引向庄园,委托函上赫然是他遗忘已久的名字——(玩家姓名)。他决定回到庄园,探寻真相……</div>
+            <div>20世纪欧洲,有一对年轻的艺术家夫妇在某偏远的山区以低廉的价格买下了一座占地面积巨大的庄园。因为历代主人有不祥传闻,这座庄园的名声很差。但是这对夫妻对迷信和流言置若罔闻。玩家扮演的主角便是这对夫妇的孩子。</div>
+            <div>24年前,主角迎来了12岁生日,但就在这一天双亲被匪徒残忍杀害了,主角精神受到了极大的冲击,精神恍惚,变得自闭。在他人的欺诈下,庄园被变卖而主角则被送进精神病院。庄园虽几经转手,但恶名依旧,不久便被荒废。</div>
+            <div>13年前,新兴犯罪推理小说家——奥尔菲斯开始在文学界崭露头角。同年,庄园被一位青年收购,在重金打造下庄园恢复了生机,但仍有很多地方被闲置（例如林场、猎场、教堂等区域）。就在大家认为庄园会在这位青年手下日益好转,但诡异的是事情发生了,人们察觉到这里的人员缺口像填不满似的,从未停止人员招募。社会上诸多的人口失踪案最后也都指向了这个地方。但警方的数次调查都一无所获。</div>
+            <div>10年前,一场大火烧了庄园大半区域。人们发现火灾中的遇难者死因和火灾没有任何关系,仅有少数几个幸存者昏迷在地,他们躺在地上的位置是经过特殊布置的,似乎在举办某种神秘的仪式,而小说家奥尔菲斯也在幸存者中。但奇怪的是,所有幸存者醒来后发现自己完全忘记了为什么来这个庄园,以及在这里发生过什么。幸存者等人的遭遇被定性为某种仪式的牺牲者,但其余人员的死因则始终无法得到合理解释。随后庄园被关闭,从此这个地方再无人敢问津甚至靠近这片区域,人们称之为“恶名昭著的庄园”。</div>
+            <div>主角——奥尔菲斯昏迷了整整一年,醒来时完全忘记了自己是谁。作为作家他已经写不出好的小说了,不久,这个曾名动一时的名字再也没有出现于公众视野中。</div>
+            <div>7年前,奥尔菲斯开了所私人侦探事务。1月前,某富商年幼的女儿离奇失踪,种种迹象都指向了“恶名昭著的庄园”,富商需要人帮他调查出真相。2天前,主角收到了富商的委托函,邀请主角协助帮忙调查。细看委托函上的收件人,是一个他自己的都已经遗忘的名字——(玩家输入姓名)。1天前,主角寄出了回执函,决定前去调查。次日,主角直接来到荒废已久的庄园主屋开始了调查……</div>
         </div>
         </div>
         <div class="middle-right">
@@ -611,14 +661,29 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
-        
+            <div>奥尔菲斯在 13 年前成为了新兴犯罪推理小说作家，他的小说风格阴暗残酷，却深受读者喜爱，迅速积累了丰厚的版税和庞大的读者群，成为备受瞩目的青年才俊。然而，他的人生在十年前发生了翻天覆地的变化。</div>
+       <div>十年前，奥尔菲斯所参与运作的庄园发生了一场严重的火灾。这场火灾烧毁了大半区域，而火灾中死去的仆从们的死因经调查与火灾无关，仅有的几个幸存者昏迷在地，他们的位置似乎经过特殊布置，像是在举行某种神秘仪式，奥尔菲斯便是其中之一。他在医院昏迷了整整一年，醒来后却丢失了自己的记忆，并且他的手因医院的药物治疗而颤抖不止，无法再像从前那样顺畅地写作。</div>
+       <div>失忆后的奥尔菲斯创作水平一落千丈，写出来的东西无人问津，曾经的辉煌不再，他也渐渐从公众视野中消失。7 年前，他开了一间私人侦探事务所，专门处理一些小案子。后来，他收到了一位富商的委托，去调查一个恶名昭著的庄园，因为富商年幼的女儿在乡下度假时离奇失踪，所有证据都指向了这个庄园。</div>
+       <div>在调查过程中，奥尔菲斯发现了一些与自己过去有关的蛛丝马迹。原来，当年的庄园主以提供线索为条件邀请他前往庄园参加游戏。当他再次踏入这片被诅咒之地时，他的命运便与这座神秘的庄园紧密相连。他收到了一封随着笛子而来的邀请函，这封邀请函仿佛与他的过去有着某种联系，让他觉得也许能够解开一直困扰自己的谜团。于是，他决定深入庄园，探寻过去的真相以及隐藏在背后的秘密。在庄园中，他不断地追寻着记忆的碎片，试图找回自己失去的一切，却发现真相远比他想象的更加复杂和诡异。</div>
+
       </div>
       <div class="videoplay">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=591409792&bvid=BV1Wq4y1r7cN&cid=435490091&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  width="110%" height="106%"></iframe>
       </div>
                 `,
                 myimage:`<p><img src="../picture/小说家001.jpg" alt=""></p>`,
-                mybookmessage:2,
+                mybookmessage:`
+                        <div>
+                            <img src="../picture/小说家002.jpg" alt="">
+                            <img src="../picture/噩梦001.jpg" alt="">
+                            <img src="../picture/小说家003.jpg" alt="">
+                            <img src="../picture/小说家004.jpg" alt="">
+                            <img src="../picture/小说家006.jpg" alt="">
+                            <img src="../picture/小说家005.jpg" alt="">
+                            <img src="../picture/小说家007.jpg" alt="">
+                            <img src="../picture/小说家008.jpg" alt="">
+                        </div>
+                `,
                 titlename:'小说家/噩梦'
             },
             {
@@ -628,6 +693,9 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
+            <div>在那场被黑暗笼罩的灾难之前，小女孩有着幸福却又神秘的童年。她生活在一个犹如伊甸园般的绝园孤岛上。岛上的家人世代信奉缪斯女神，这里还有着一类特殊效用的黑色蕨类植物，被大家称之为“女神的恩赐”。小女孩在这样的环境中成长，心中满是对世界的好奇与憧憬。</div>
+        <div>然而，红色的噩梦从海天交接处开始燃烧，一切美好都被无情地吞噬。小女孩再次苏醒时，只看到曾经的家园破碎坍塌，化为一片废墟，仿佛是一座又一座伴随岛屿哀鸣而生的墓碑。她失去了亲人和熟悉的一切，孤独地在世间流浪，受尽苦难，还时常受人欺负。在流浪的日子里，她曾藏在床下，无意间看到了恐怖的一幕，那或许是庄园主被杀的场景，这也成为了她心中难以磨灭的阴影。后来，流离失所的小女孩被一位神秘人带走，来到了疯人院，被绑在电疗椅上接受着痛苦的治疗。</div>
+        <div>时光荏苒，小女孩渐渐长大，成为了一名记者——爱丽丝·德罗斯。儿时的经历让她变得坚韧而勇敢，她决定用自己手中的笔和相机，去探寻真相，挖掘那些被隐藏的秘密。她始终无法忘记过去的遭遇，也对曾经看到的恐怖场景耿耿于怀，她想要知道当年到底发生了什么，那场噩梦的背后究竟隐藏着怎样的阴谋。于是，她带着强烈的好奇心和使命感，踏入了曾经充满恐惧的庄园，试图解开这一切的谜团，为自己的过去寻找一个答案，也为那些同样遭受苦难的人发声。</div>
         
       </div>
       <div class="videoplay">
@@ -635,7 +703,16 @@
       </div>
                 `,
                 myimage:`<p><img src="../picture/记者001.jpg" alt=""></p>`,
-                mybookmessage:3,
+                mybookmessage:`
+                        <div>
+                            <img src="../picture/小女孩001.jpg" alt="">
+                            <img src="../picture/小女孩002.webp" alt="">
+                            <img src="../picture/小女孩003.jpg" alt="">
+                            <img src="../picture/小女孩004.jpg" alt="">
+                            <img src="../picture/记者002.jpg" alt="">
+                            <img src="../picture/记者003.jpg" alt="">
+                        </div>
+                `,
                 titlename:'记者/小女孩'
             },
             {
@@ -645,14 +722,25 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
-        
+            <div>菲欧娜·吉尔曼出生于一个与外界隔绝的古老魔法家族。她的母亲严肃理性，对她的教导极为严苛，而父亲则浪漫感性。在这样的家庭环境中成长，菲欧娜的内心逐渐产生了困惑。</div>
+ <div>自幼，菲欧娜便展现出了对神秘学和地理的浓厚兴趣。作为族长的女儿，她被家族寄予厚望，期望她能成为新一代的领导者。然而，这份沉重的期望如同枷锁一般，让她倍感压抑。看着身边的小伙伴们能够无忧无虑地长大，唯独她每日都要刻苦学习魔法、钻研秘术，这使得她对自由的渴望愈发强烈。</div>
+ <div>经过多年的苦练以及凭借着过人的天赋，菲欧娜终于掌握了族里的秘术。她成功地打通了一条可供人穿越的空间通道，建立起了一条特殊的甬道。她的父亲，也就是族长，本以为女儿的成长会带领家族走向更加繁荣的未来，但他的期望终究落空了。菲欧娜利用这条通道，逃离了家族，获得了她梦寐以求的自由</div>
+ <div>重获自由的菲欧娜开始在世界各地探险，她带着那枚古怪的金属环——圣物“门之钥”，去追寻那些她曾在书籍上看到的神秘事物。多年后，在一个小镇暂居的她收到了一封神秘的信函。信函仿佛是命运的指引，让她对一个神秘的地方产生了浓厚的兴趣。于是，菲欧娜决定前往这个弥漫着神秘气息的庄园。她声称是神明引导她来到这里，但无人相信她的说辞。在庄园中，她将运用自己的魔法能力，为求生之路增添一抹神秘的色彩。</div>
+ 
       </div>
       <div class="videoplay">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1305862871&bvid=BV1iM4m1m7uz&cid=1591681379&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
       </div>
                 `,
                 myimage:`<p><img src="../picture/祭祀001.jpg" alt=""></p>`,
-                mybookmessage:4,
+                mybookmessage:`
+                         <div>
+                        <img src="../picture/祭祀002.jpg" alt="">
+                        <img src="../picture/祭祀003.jpg" alt="">
+                        <img src="../picture/祭祀004.jpg" alt="">
+                        <img src="../picture/祭祀005.jpg" alt="">
+                       </div>
+                `,
                 titlename:'祭祀'
             },
             {
@@ -662,14 +750,24 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
-        
+             <div>伊莱·克拉克出生于英格兰西南部的一个小镇。他自幼便展现出了独特的天赋，能够看到一些常人无法看到的幻影，通过与幻影的对话，他开始以全新的视角观察世界。</div>
+    <div>年轻的伊莱在丛林中救下了一只眼睛受伤的猫头鹰。之后，这只猫头鹰为他带来了杜伊德先知，在杜伊德的教导下，伊莱掌握了预知未来的能力。但同时，他与杜伊德也立下了一个不可违背的契约——不能将自己预知的事情告诉别人。</div>
+    <div>随着时间的推移，伊莱渐渐长大，并在某次宴会上遇到了一个名叫格秋的女孩。格秋让伊莱怦然心动，他深深爱上了这个女孩。后来，伊莱预知到格秋家的谷物生意将会因价格下跌而遭遇危机，为了不让心爱的女人伤心，伊莱违背了与杜伊德的契约，将这件事告诉了格秋。格秋一家因此免受了巨大的经济损失，但伊莱却因为违背誓言失去了预言的能力。</div>
+    <div>即便如此，格秋还是与伊莱定下了婚约。可失去预言能力的伊莱无法给格秋优渥的生活，而此时他收到了欧利蒂丝庄园的邀请函。为了重获预言能力，给未婚妻更好的生活，伊莱决定前往庄园。进入庄园后，伊莱确实重新获得了预言的能力，但等待他的，却是一场场惊心动魄的生死游戏。在这个充满诡异与危险的地方，伊莱能否成功存活并回到格秋的身边，一切都还是未知数。</div>
+    
       </div>
       <div class="videoplay">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1500506687&bvid=BV1iU421o7vb&cid=1440248221&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
       </div>
                 `,
                 myimage:`<p><img src="../picture/先知001.jpg" alt=""></p>`,
-                mybookmessage:5,
+                mybookmessage:`
+                        <div>
+                            <img src="../picture/先知002.jpg" alt="">
+                            <img src="../picture/先知003.jpg" alt="">
+                            <img src="../picture/先知004.jpg" alt="">
+                        </div>
+                `,
                 titlename:'先知'
             },
             {
@@ -679,14 +777,23 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
-        
+                <div>古董商原名萧瑶，是隐世大家萧家最小的女儿。萧家秉持着高尚的门风，“解箨新篁幼，亦有岁寒姿。筠心似君子，澹如自相持”是她记住的第一首诗，也是父亲常挂嘴边的萧门风骨。然而，萧家虽避世隐居却仍招灾厄，被奸人所害，惨遭灭门，只有萧瑶侥幸活了下来。</div>
+    <div>经历家破人亡的萧瑶，对父亲所教导的善恶有报产生了质疑。她誓要为萧家昭雪报仇，几经波折拜入高人门下习武。她以机关箫为武器，一手棍法使得出神入化。可当她历经艰辛、尝试尽一切向上爬的可能后，才发现现实并非如同话本里的英雄故事那样善恶有报，以卵击石的她复仇失败。她去刺杀的人只是一个替身，真正的仇人站在重重守卫之后若有所思地看着她。她奋力逃出包围，身份暴露，从此开始了暗无天日的逃亡之路。</div>
+    <div>在逃亡中，她被太多逝者的枷锁裹挟，为了不辜负他们的意志，她放弃了家族姓名，改名为戚十一。后来她逃亡到英国，在唐人街开了一家古董店。在这里，她遇到了人生中最重要的人——挚友唐肆，唐肆的善良天真照亮了她阴湿贫瘠的内心。然而，当她刚准备洗去手上的污渍，尝试适应普通人的活法时，唐肆却被神秘的庄园带走。于是，戚十一再次拿起机关箫，进入庄园寻找挚友。</div>
+    
       </div>
       <div class="videoplay">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=856173822&bvid=BV1HV4y177gH&cid=779808166&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
       </div>
                 `,
                 myimage:`<p><img src="../picture/古董商001.jpg" alt=""></p>`,
-                mybookmessage:6,
+                mybookmessage:`
+                        <div>
+                            <img src="../picture/古董商002.jpg" alt="">
+                            <img src="../picture/古董商003.jpg" alt="">
+                            <img class="gudongshan" src="../picture/古董商004.jpg" alt="">
+                        </div>
+                `,
                 titlename:'古董商'
             },
             {
@@ -696,14 +803,26 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
-        
+            <div>1. 皇室出身，骄奢生活：红夫人原型是法国国王路易十六的妻子玛丽·安托瓦内特。她从出生起就环绕在鲜花、珠宝与华服之间，成长于气氛轻松的皇室家庭，自幼便过着无比奢华的生活。嫁入法国皇室成为皇后之后，她每天热衷于舞会、时装、玩乐和庆宴，修饰花园，对政治毫无兴趣，也不关心底层百姓的疾苦，有着“赤字夫人”之称。</div>
+     <div>2. 著名言论，引发不满：当有人告知她百姓已经吃不上面包时，她天真地反问“那他们为什么不吃蛋糕呢？”。这一言论在民间广泛流传，引发了民众对她的强烈不满，也成为她被批判的重要原因之一。但也有观点认为，她可能从未说过这样的话，只是被当时的社会环境所误传。</div>
+     <div>3. 时代变革，惨遭处刑：法国大革命爆发，上层贵族的统治被推翻，封建旧贵族被送上断头台。玛丽皇后和路易十六成为了法国群众的众矢之的，在这场历史的变革中，他们也未能幸免。红夫人最终被判处死刑。在行刑前，她还在苦恼着被行刑官剪断的长发。面朝下凝视着水盆中的倒影，她看着自己的裙子逐渐变成了红色，这就是红夫人记忆中最后的景象。</div>
+     <div>4. 化身监管者，来到庄园：死后，红夫人以监管者的身份来到了欧利蒂丝庄园。她依旧保持着高贵的姿态，在庄园中继续着她的“狩猎”，仿佛要向那些曾经伤害过她的人复仇。</div>
+     <div>红夫人的技能“水镜”，可以在场景中生成水镜，通过水镜她能瞬间出现在水镜另一侧的位置，对求生者展开攻击，这也与她在水盆中看到自己倒影的最后记忆相呼应。她的故事充满了悲剧色彩，也展现了时代变革对个人命运的巨大影响。</div>
+     
       </div>
       <div class="videoplay">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=65036633&bvid=BV1M4411r7Kz&cid=112884620&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
       </div>
                 `,
                 myimage:`<p><img src="../picture/红夫人001.jpg" alt=""></p>`,
-                mybookmessage:7,
+                mybookmessage:`
+                        <div>
+                        <img src="../picture/红夫人002.jpg" alt="">
+                        <img src="../picture/红夫人003.jpg" alt="">
+                        <img src="../picture/红夫人004.jpg" alt="">
+                        <img src="../picture/红夫人005.jpg" alt="">
+                       </div>
+                `,
                 titlename:'红夫人'
             },
             {
@@ -713,14 +832,27 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
-        
+            <div>在《第五人格》的神秘世界中，心理学家艾达·梅斯默有着一段令人感慨的故事。</div>
+      <div>艾达出生于一个中产家庭，从小便展现出了对心理学的浓厚兴趣。25 岁时，她毅然决然地踏上了对催眠疗法的研究之路。她渴望通过暗示和指令催眠病人，消除他们内心的疼痛、恐惧以及其他负面情绪，为他们带来心灵的慰藉。然而，在学校进行实验的过程中，她遭遇了重重困难。病例们无法忍受必要的痛感，对她的催眠也毫无反应，这让她的研究一次次以失败告终。最终，艾达不得不无奈地离开学校，寻找新的研究方向。</div>
+      <div>后来，艾达来到了白沙街疯人院进行短期工作。在这里，她遇见了病患埃米尔。埃米尔沉默寡言，身上散发着一种神秘的气质。在对埃米尔进行治疗的过程中，艾达惊喜地发现他对催眠有着极好的反应。那一刻，艾达仿佛看到了自己研究的新希望，她确认埃米尔就是自己一直苦苦寻觅的完美实验品。</div>
+      <div>随着时间的推移，艾达与疯人院的合约即将到期。此时的艾达，对埃米尔已经产生了一种复杂而特殊的情感。她不忍心看着埃米尔继续在疯人院中遭受折磨，于是决定帮助他逃出这个地方。在艾达的精心策划下，埃米尔成功逃离了疯人院。从此，艾达将埃米尔带在身边，继续进行她的催眠实验。在她的心中，失忆的埃米尔需要她的治疗，而只有她才能够拯救这个深陷痛苦之中的灵魂。</div>
+      <div>然而，好景不长。在不断的实验过程中，催眠疗法逐渐失效。病患埃米尔时常在梦中惊醒，回忆起那些如同野兽般的从前。艾达陷入了深深的困惑和焦虑之中，她不知道该如何继续下去。就在这时，一封神秘的邀请函送到了他们手中，邀请他们前往欧利蒂丝庄园。艾达和埃米尔决定一同踏入这个充满未知的庄园，希望在这里能够找到解决问题的方法。</div>
+      <div>在庄园中，艾达凭借着自己的心理学知识和技能，努力应对着各种危险和挑战。她与埃米尔之间的情感联系也变得更加紧密，他们相互扶持，共同在这个恐怖的世界中寻找着生存的希望。艾达始终坚信，只要他们不放弃，就一定能够找到治愈埃米尔的方法，走出这片黑暗的困境。</div>
+      
       </div>
       <div class="videoplay">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=749361862&bvid=BV1oC4y1c7NW&cid=1355299189&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
       </div>
                 `,
                 myimage:`<p><img src="../picture/心理学家001.jpg" alt=""></p>`,
-                mybookmessage:8,
+                mybookmessage:`
+                        <div class="xianlixuejia">
+                            <img src="../picture/心理学家+病患001.jpg" alt="">
+                            <img src="../picture/心理学家002.jpg" alt="">
+                            <img src="../picture/心理学家003.jpg" alt="">
+                            <img src="../picture/心理学家+病患002.jpg" alt="">
+                        </div>
+                `,
                 titlename:'心理学家'
             },
             {
@@ -730,14 +862,24 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
-        
+             <div>病患名为埃米尔。他有着悲惨的过去，年幼时出生于一个贫困的家庭。起初家庭虽贫寒但也还算幸福，然而好景不长，母亲的病倒让家庭的支柱彻底瓦解。作为家中最小的孩子，埃米尔不得不走向街头乞讨，每天能讨到的钱少得可怜，生活艰难到连狗都不如。</div>
+       <div>后来，埃米尔意外掉入了斗兽场，在那里他经历了残酷的生存挑战，但奇迹般地活了下来。那些唯利是图的人看到了他的顽强，便想将他培养成最棒的斗犬。于是，他被关在笼子里，脚上戴着镣铐，精神在生理与心理的双重折磨下逐渐崩溃。最终，他瘫倒在了白沙街的街口。</div>
+       <div>一场高烧带走了埃米尔绝大多数的记忆，醒来后他便成了疯人院的一名病患。在疯人院中，他遭受了注射、拘束、电疗等折磨，但始终听话地接受别人的摆弄，是病患中最沉默的人。后来，艾达·梅斯默来到疯人院行医，她是一名执着于催眠疗法的心理学家。埃米尔独特的气质和对催眠的良好反应，让艾达确认他就是自己要找的完美实验品。在与疯人院的合约到期时，艾达帮助埃米尔逃出了疯人院。</div>
+       <div>在艾达的照顾下，埃米尔逐渐恢复了一部分正常人的情绪反应和行动，但也开始回想起一些模糊的记忆碎片。记忆中自己被关押、捆绑、动弹不得，周围尘土飞扬，还有无数人围绕着他疯狂喝彩欢呼。自那以后，只要被绑上椅子或病床，他都会条件反射地焦躁恐慌。埃米尔始终无法想起自己的身份，但他知道艾达对自己来说是与众不同的人。他被艾达带在身边，两人之间产生了扭曲而真挚的爱情。后来，他们一同收到了神秘请柬，来到了充满危险的欧利蒂丝庄园。</div>
+       
       </div>
       <div class="videoplay">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=749361862&bvid=BV1oC4y1c7NW&cid=1355299189&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
       </div>
                 `,
                 myimage:`<p><img src="../picture/病患001.jpg" alt=""></p>`,
-                mybookmessage:9,
+                mybookmessage:`
+                        <div class="binghuan">
+                            <img src="../picture/心理学家+病患001.jpg" alt="">
+                            <img src="../picture/心理学家+病患002.jpg" alt="">
+                            <img src="../picture/病患002.jpg" alt="">
+                        </div>
+                `,
                 titlename:'病患'
             },
             {
@@ -747,6 +889,10 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
+             <div>前锋原名威廉·艾利斯。他出生于底层工人家庭，从小摸爬滚打让他明白循规蹈矩没有出路。</div>
+        <div>在拉格比高中时期，威廉是一名颇具实力的足球运动员，但他经常挑战比赛规则的底线。他在比赛中经常故意撞伤对手，以这种方式获取胜利。在一次比赛中，他的犯规行为致使对手永远无法站立，这引起了足协的愤怒，导致他被驱逐出这项运动。后来，橄榄球运动兴起，威廉认为自己是这项运动的开创者，可他却逐渐被人遗忘。</div>
+        <div>大学毕业后，威廉加入了小型橄榄球俱乐部，但他依然我行我素，不喜欢动脑子，觉得暴力可以解决一切问题，这使得他在俱乐部的发展也不顺利。一次偶然的机会，他去看魔术表演，看到了魔术师对其师傅表演用的锁链动手脚。此后他便心神不宁，担心自己会被魔术师灭口。</div>
+        <div>后来，威廉收到了一封神秘邀请函。这封信对他的行为给予了高度评价，将他的“不公平优势”称为“了不起的革新”。信中邀请他到欧利蒂丝庄园，对第五人格游戏的规则进行修订与完善。威廉认为自己遇到了伯乐，便义无反顾地踏入了庄园。</div>
         
       </div>
       <div class="videoplay">
@@ -754,7 +900,13 @@
       </div>
                 `,
                 myimage:`<p><img src="../picture/前锋001.jpg" alt=""></p>`,
-                mybookmessage:10,
+                mybookmessage:`
+                        <div>
+                            <img src="../picture/前锋002.jpg" alt="">
+                            <img src="../picture/前锋003.jpg" alt="">
+                            <img class="qianfeng" src="../picture/前锋004.jpg" alt="">
+                        </div>
+                `,
                 titlename:'前锋'
             },
             {
@@ -764,14 +916,26 @@
             <button class="aki-btn111" onclick="changepages2()">角色介绍</button>
         </div>
       <div class="middle-left-jieshao">
-        
+           <div>在《第五人格》的世界中，宿伞之魂有着一段凄美而悲壮的背景故事。</div>
+      <div>宿伞之魂由谢必安与范无咎两人的魂魄融合而成。他们自幼结义，情同手足，长大后一同成为了衙门的捕快，秉持着正义之心，维护着一方安宁。</div>
+      <div>一日，两人相偕行至南台桥，天空突然下起雨来。谢必安让范无咎在桥下稍作等待，自己则返回家中取伞。然而，谢必安刚离开不久，倾盆大雨便席卷而来，河水瞬间暴涨。范无咎为了坚守与兄弟的约定，紧紧抱住桥柱，不愿离去。洪水无情，最终将他冲走，从此不知所踪。</div>
+      <div>当谢必安拿着伞匆匆赶回时，只看到汹涌的河水，却不见范无咎的身影。他悲痛欲绝，自责不已，从此只着白衣，无论晴雨都背着当日的黑伞，在南台桥边四处搜寻范无咎的踪迹。但无论他如何寻找，都无法找到自己的兄弟。在痛苦与思念的折磨下，谢必安最终选择在南台桥下自缢。</div>
+      <div>身陨之后，他们的魂魄来到了阴曹地府，阎罗王感念兄弟二人情深，将他们受封为黑白无常。而在第五人格的游戏中，他们化为宿伞之魂，成为了监管者。谢必安（白无常）身着白色长袍，头戴白色高帽，面容俊朗但肤色惨白，手持一把精致的黑色雨伞，眼神深邃而神秘。范无咎（黑无常）身着黑色长袍，头戴黑色高帽，面容凶悍，透露出一种坚毅与不屈，同样手持一把黑色雨伞。他们带着生前的遗憾与执念，在庄园中继续着自己的“使命”，仿佛在寻找着什么，又或许是在等待着一个解脱的契机。</div>
+      
       </div>
       <div class="videoplay">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=644157905&bvid=BV1qY4y1w72s&cid=794996640&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="110%" height="106%"></iframe>
       </div>
                 `,
                 myimage:`<p><img src="../picture/宿伞之魂001.jpg" alt="">`,
-                mybookmessage:11,
+                mybookmessage:`
+                         <div>
+                        <img src="../picture/宿伞之魂002.jpg" alt="">
+                        <img src="../picture/宿伞之魂003.jpg" alt="">
+                        <img src="../picture/宿伞之魂004.jpg" alt="">
+                        <img src="../picture/宿伞之魂005.jpg" alt="">
+                       </div>
+                `,
                 titlename:'宿伞之魂'
             },
             {
@@ -780,9 +944,13 @@
                         <div class="loader"></div>
                     </div>
                 `,
-                myimage:`<p>最后的最后</p>`,
-                mybookmessage:'谢谢观看!!!',
-               titlename:'谢谢'
+                myimage:`<p><img src="../picture/川上富江.jpeg" alt="">`,
+                mybookmessage:`
+                        <div>
+                            <img  class="myheadpicture" onclick="window.location.href = 'https://8023time.github.io'" src="../picture/我的头像.jpg" alt="">
+                        </div>
+                `,
+               titlename:'谢谢观看'
             }
         ]
         function changepages1(){
